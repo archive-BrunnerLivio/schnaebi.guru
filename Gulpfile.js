@@ -17,6 +17,10 @@ gulp.task('default', ['copy-static'], function () {
         .pipe(handlebars(templateData, options))
         .pipe(rename('memes.html'))
         .pipe(gulp.dest('dist'));
+    gulp.src('src/templates/sites/buy.hbs')
+        .pipe(handlebars(templateData, options))
+        .pipe(rename('buy.html'))
+        .pipe(gulp.dest('dist'));
     return gulp.src('src/templates/sites/blog.hbs')
         .pipe(handlebars(templateData, options))
         .pipe(rename('index.html'))
